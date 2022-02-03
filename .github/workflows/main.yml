@@ -9,7 +9,7 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - name: Project changes past 7 days
-              uses: CC-Treasury/1stAction@v1.0.0
+              uses: CC-Treasury/1stAction@v0.2.0-alpha
               id: project
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}
