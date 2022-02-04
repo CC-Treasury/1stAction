@@ -16,7 +16,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         ref: 'gh-pages'
-        path: ''
+        path: 'out'
 
     - name: 'Generate Dashboard'
       uses: ethomson/issue-dashboard@v1.0.2
@@ -25,7 +25,7 @@ jobs:
           title: 'Dashboard'
           output:
             format: html
-            filename: 'index.html'
+            filename: 'out/dashboard.html'
           sections:
           - title: 'Pull Requests'
             widgets:
@@ -41,4 +41,4 @@ jobs:
         git config user.email 'catalystcircle@protonmail.com'
         git commit -m 'Documentation update' --allow-empty
         git push origin gh-pages
-      working-directory: root
+      working-directory: out
