@@ -16,16 +16,16 @@ jobs:
       uses: actions/checkout@v2
       with:
         ref: 'gh-pages'
-        path: 'out'
+        path: ''
 
     - name: 'Generate Dashboard'
-      uses: ethomson/issue-dashboard@v1
+      uses: ethomson/issue-dashboard@v1.0.2
       with:
         config: |
           title: 'Dashboard'
           output:
             format: html
-            filename: 'out/dashboard.html'
+            filename: 'index.html'
           sections:
           - title: 'Pull Requests'
             widgets:
