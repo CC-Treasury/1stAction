@@ -16,7 +16,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         ref: 'gh-pages'
-        path: ''
+        path: 'out'
 
     - name: 'Generate Dashboard'
       uses: ethomson/issue-dashboard@v1.0.2
@@ -25,14 +25,14 @@ jobs:
           title: 'Dashboard'
           output:
             format: html
-            filename: 'index.html'
+            filename: 'out/dashboard.html'
           sections:
           - title: 'Pull Requests'
             widgets:
             - type: 'table'
               title: 'New Pull Requests (This Week)'
               issue_query: 'repo:CC-Treasury/1stAction is:open is:issue created:>{{ date("-7 days") }} sort:created-asc'
-        token: ${{ github.token }}
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Publish Documentation
       run: |
